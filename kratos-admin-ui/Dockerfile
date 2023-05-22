@@ -1,5 +1,7 @@
 FROM node:20.1.0-bullseye-slim as build 
 WORKDIR /app
+ARG BASE_URL=""
+ENV PUBLIC_URL=$BASE_URL
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
